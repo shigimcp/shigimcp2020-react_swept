@@ -1,0 +1,194 @@
+@import './Global.scss';
+
+/* #region ==================== BASE ==================== */
+
+.aboutContainer {
+
+    width: 100%;
+    height: auto;
+
+    margin: 120px auto 0 auto;
+
+    position: absolute;
+
+    .haiku {
+
+        text-align: center;
+        letter-spacing: 0.05em;
+
+        padding: 0 0 10px 0;
+
+        h1 {
+            font-size: 2.5em;
+            letter-spacing: 0.005em;
+        }
+
+        h2 {
+            font-size: 1.875em;
+        }
+
+        h3 {
+            font-size: 1.625em;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .credit {
+            font-size: 1.3125em;
+            padding: 0.5vh 0 0 0;
+        }
+
+        .plea {
+            font-size: 1em;
+            padding: 0.0625vh 0 1.25vh 0;
+        }
+    }
+
+    .guideContainer, .afroContainer, .curlContainer {
+
+        width: inherit;
+
+        position: inherit;
+    }
+
+    .guideContainer {
+
+        visibility: hidden;
+
+        .guideSVG {
+
+            opacity: 0.5;
+
+            position: inherit;
+        }
+    }
+
+    .afroContainer {
+
+        width: 100%;
+    }
+
+    .curlContainer {
+
+        width: 100%;
+
+        .curl {
+
+            width: 3.75vw;
+
+            position: absolute;
+
+            cursor: pointer;
+
+            .curlPath {
+                fill: #333333;
+                // fill: #ff00ff;
+            }
+        }
+
+        .boingLB, .boingRB {
+
+            width: 25%;
+            height: auto;
+
+            position: absolute;
+
+            .boingPath {
+                stroke: #ff00ff;
+            }
+        }
+
+        .thoughtBubble {
+
+            width: 35%;
+            height: auto;
+
+            position: absolute;
+        }
+
+        .completeThought {
+
+            width: 35%;
+            height: auto;
+        }
+    }
+
+    .aboutItem {
+        border-top: 1px solid #999999;
+
+        margin: 0;
+        padding: 20px 0;
+
+        display: grid;
+        grid-template-columns: 15% auto;
+
+        .tdKey, .tdValue {
+            margin: 0;
+            padding: 5px 0;
+        }
+
+    }
+}
+
+/* #endregion ==================== BASE ==================== */
+
+
+
+/* #region ========================= RETINA LAPTOPS: 1441px+ ========================= */
+
+@media only screen 
+    and (min-device-width: 1441px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            width: 80vw;
+            left: 10vw;
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= RETINA LAPTOPS: 1201px+ ========================= */
+
+
+
+/* #region ========================= TABLETS: 1281px - 1440px ========================= */
+
+@media only screen 
+    and (min-device-width: 1281px) 
+    and (max-device-width: 1440px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            width: 90vw;
+            left: 5vw;
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= TABLETS: 813px - 1200px ========================= */
+
+
+
+/* #region ========================= MOBILE (iPHONE X): 375px - 1280px ========================= */
+
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 1280px) 
+    { 
+        /* #region -------------------- aboutContainer -------------------- */
+
+        .aboutContainer {
+            width: 95vw;
+            left: 2.5vw;
+        }
+
+        /* #endregion -------------------- aboutContainer -------------------- */
+    }
+
+/* #endregion ========================= MOBILE (iPHONE X): 375px - 813px ========================= */

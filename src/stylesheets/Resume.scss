@@ -1,0 +1,96 @@
+@import './Global.scss';
+
+/* #region ==================== RESUME ==================== */
+
+.employerList {
+
+    text-align: left;
+
+    margin: 0 auto;
+    padding: 0 0 150px 0;
+
+    .employerItem {
+
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+        padding: 0 0 50px 0;
+
+        display: inline-block;
+
+        .logo {
+
+            width: 15%;
+
+            float: left;
+
+            margin: inherit;
+            padding: 0;
+        }
+
+        .employerInfo {
+
+            font-weight: bold;
+
+            width: 80%;
+            height: 100%;
+
+            margin: inherit;
+            padding: 0;
+
+            float: right;
+
+            h1 {
+
+                font-size: 1.5em;
+                text-align: inherit;
+
+                margin: inherit;
+                padding: inherit;
+            }
+
+            h2 {
+
+                font-size: 1.125em;
+                text-align: inherit;
+
+                width: 50%;
+
+                margin: inherit;
+                padding: inherit;
+
+                display: inline-block;
+            }
+
+            .employerDates {
+
+                font-size: 1em;
+                text-align: right;
+
+                width: 22.5%;
+
+                margin: inherit;
+                padding: inherit;
+
+                float: right;
+            }
+
+            ul {
+                margin: inherit;
+                padding: 15px 0;
+
+                li {
+                    list-style: none;
+                }
+            }
+
+            p {
+                margin: inherit;
+                padding: 2.5px 0;
+            }
+        }
+    }
+}
+
+/* #endregion ==================== RESUME ==================== */

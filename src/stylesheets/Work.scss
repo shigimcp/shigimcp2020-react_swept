@@ -1,0 +1,72 @@
+@import './Global.scss';
+
+.workPage {
+    width: 97.5vw;
+
+    margin: 0 auto;
+    padding: ($header-height + $navBar-height + $workkNav-height + 10) 0 0 0;
+
+    .workList {
+        width: 100%;
+
+        margin: 0 auto;
+        padding: 0;
+
+        hr {
+            margin: 10px 35%;
+        }
+
+        .importContainer {
+            color: #ff00ff;
+            font-weight: bolder;
+
+            margin: 0;
+            padding: 0;
+
+            position: absolute;
+            z-index: 9;
+
+            .importedContent {
+                margin: 0 auto;
+                padding: 0;
+            }
+        }
+
+        .masonrySection {
+            margin: 0;
+            padding: 0 0 100px 0;
+
+            .masonry {
+
+                .workItem {
+                    margin: 0;
+                    padding: 0;
+
+                    .masonryImg {
+                        width: 100%;
+
+                        display: block;
+                    }
+
+                    .masonryInfo {
+                        background: #eeeeee;
+
+                        letter-spacing: .025em;
+
+                        margin: 0;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.note {
+    text-align: center;
+    line-height: 1.375em;
+
+    margin: o;
+    padding: 0;
+}

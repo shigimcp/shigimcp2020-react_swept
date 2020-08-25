@@ -1,0 +1,10 @@
+@import './Global.scss';
+
+.bodyContainer {
+    width: $body-width;
+    min-width: $body-min-width;
+    max-width: $body-max-width;
+
+    margin: 0 auto;
+    padding: 150px 0 0 0;
+}
