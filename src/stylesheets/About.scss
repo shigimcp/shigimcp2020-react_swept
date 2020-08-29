@@ -1,22 +1,37 @@
 @import './Global.scss';
 
+
 /* #region ==================== BASE ==================== */
 
 .aboutContainer {
+    // border: 2px solid #ff0000;
 
+    // width: 80vw;
+    // width: 100vw;
     width: 100%;
+    // height: 100%;
     height: auto;
 
     margin: 120px auto 0 auto;
 
     position: absolute;
+    // top: 1.25vh;
+    // left: 10vw;
+    // left: 0;
 
     .haiku {
+        // border: 2px solid #0000ff;
 
         text-align: center;
         letter-spacing: 0.05em;
 
+        // width: 25%;
+
         padding: 0 0 10px 0;
+
+        // float: right;
+        // position: absolute;
+        // right: 0vw;
 
         h1 {
             font-size: 2.5em;
@@ -25,98 +40,218 @@
 
         h2 {
             font-size: 1.875em;
+            // letter-spacing: 0.025em;
         }
 
         h3 {
             font-size: 1.625em;
+            // letter-spacing: 0.025em;
         }
 
         p {
             text-align: center;
+            // letter-spacing: 0.05em;
         }
 
         .credit {
             font-size: 1.3125em;
             padding: 0.5vh 0 0 0;
+            // letter-spacing: 0.025em;
         }
 
         .plea {
             font-size: 1em;
+            // letter-spacing: 0.025em;
             padding: 0.0625vh 0 1.25vh 0;
         }
     }
 
     .guideContainer, .afroContainer, .curlContainer {
+        // border: 2px solid #ff00ff;
 
         width: inherit;
+        // height: inherit;
+        // height: auto;
 
+        // position: absolute;
         position: inherit;
     }
 
     .guideContainer {
+        // border: 2px solid #ff0000;
+
+        // height: 100%;
+        // height: 100vh;
 
         visibility: hidden;
 
         .guideSVG {
+            // border: 2px solid #0000ff;
 
             opacity: 0.5;
 
             position: inherit;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
         }
     }
 
     .afroContainer {
+        // border: 2px solid #00ff00;
 
         width: 100%;
+        // // height: 100%;
+        // // height: auto;
+        // // height: 100vh;
+
+        // position: relative;
+
+        // .aboutAfro {
+        //     // border: 2px solid #0000ff;
+
+        //     width: 100%;
+        //     height: auto;
+
+        //     position: absolute;
+        // }
+
+        // .curl {
+        //     // border: 2px solid #0000ff;
+
+        //     // width: 3.75%;
+        //     width: 3.75vw;
+        //     height: auto;
+
+        //     position: absolute;
+
+        //     cursor: pointer;
+
+        //     .curlPath {
+        //         // border: 2px solid #ff0000;
+
+        //         fill: #333333;
+        //         fill: #ff00ff;
+        //     }
+        // }
     }
 
     .curlContainer {
+        // border: 2px solid #0000ff;
 
         width: 100%;
+        // height: 100%;
+        // height: auto;
+        // height: 100vh;
 
-        .curl {
+        // position: relative;
 
-            width: 3.75vw;
-
-            position: absolute;
-
-            cursor: pointer;
-
-            .curlPath {
-                fill: #333333;
-                // fill: #ff00ff;
-            }
+        .completeThought *, .thought * {
+            margin: 0;
+            padding: 0;
         }
 
-        .boingLB, .boingRB {
-
-            width: 25%;
-            height: auto;
-
-            position: absolute;
-
-            .boingPath {
-                stroke: #ff00ff;
-            }
-        }
-
-        .thoughtBubble {
+        .completeThought, .thought {
+            // border: 2px solid #0000ff;
 
             width: 35%;
             height: auto;
 
+            overflow: visible;
+
             position: absolute;
-        }
 
-        .completeThought {
+            .thoughtBubble {
+                // border: 2px solid #0000ff;
 
-            width: 35%;
-            height: auto;
+                width: 35%;
+                height: auto;
+
+                position: absolute;
+
+                .thoughtBubblePath {
+
+                    fill: #ffffff;
+                    stroke: #000000;
+
+                    // fill: #00ffff;
+                    // stroke: #ffff00;
+                }
+            }
+
+            .boingLB, .boingRB, .boing {
+                // border: 2px solid #0000ff;
+
+                // visibility: hidden;
+
+                width: 25%;
+                height: auto;
+
+                // position: absolute;
+
+                .boingPath {
+                    stroke: #000000;
+                    stroke: #ff00ff;
+
+                    // position: absolute;
+                }
+            }
+
+            // .boingLB {
+                // // border: 2px solid #0000ff;
+
+                // transform: translate(5%, -75%);
+            // }
+
+            // .boingRB {
+                // // border: 2px solid #0000ff;
+
+                // transform: translate(-75%, -75%);
+            // }
+
+            .curl {
+                // border: 2px solid #0000ff;
+
+                // width: 3.75%;
+                width: 3.75vw;
+                // height: auto;
+
+                position: absolute;
+
+                cursor: pointer;
+
+                .curlPath {
+                    // border: 2px solid #ff0000;
+
+                    fill: #333333;
+                    // fill: #ff00ff;
+                }
+            }
         }
     }
 
+    // canvas {
+    //     border: 2px solid #00ffff;
+    //     background: none;
+
+    //     width: 100%;
+    //     // height: 10%;
+
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
+
+    // .aboutLogo {
+    //     border: 1px solid #ff00ff;
+
+    //     // width: 100%;
+    // }
+
     .aboutItem {
+        // border: 1px solid #666666;
         border-top: 1px solid #999999;
+        // border-bottom: 1px solid #999999;
 
         margin: 0;
         padding: 20px 0;
@@ -125,6 +260,10 @@
         grid-template-columns: 15% auto;
 
         .tdKey, .tdValue {
+            // border: 1px solid #00ffff;
+
+            // width: 12.5%;
+
             margin: 0;
             padding: 5px 0;
         }
@@ -139,11 +278,29 @@
 /* #region ========================= RETINA LAPTOPS: 1441px+ ========================= */
 
 @media only screen 
+    // and (min-device-width: 813px) 
+    // and (min-device-width: 1025px) 
+    // and (min-device-width: 1201px) 
+    // and (min-device-width: 1281px) 
+    // and (min-device-width: 1367px) 
     and (min-device-width: 1441px) 
+    // and (min-device-width: 2049px) 
+    // and (min-device-width: 3000px) 
+
+    // and (max-device-width: 1600px) 
+    // and (max-device-width: 2049px) 
+
+    // and (-webkit-min-device-pixel-ratio: 2) 
+    // and (min-resolution: 192dpi)
     { 
         /* #region -------------------- aboutContainer -------------------- */
 
         .aboutContainer {
+            // border: 1px solid #ff00ff;
+
+            // width: 100vw;
+            // left: 0;
+
             width: 80vw;
             left: 10vw;
         }
@@ -158,14 +315,34 @@
 /* #region ========================= TABLETS: 1281px - 1440px ========================= */
 
 @media only screen 
+    // and (min-device-width: 768px) 
     and (min-device-width: 1281px) 
+
+    // and (max-device-width: 812px) 
+    // and (max-device-width: 1024px) 
+    // and (max-device-width: 1200px) 
+    // and (max-device-width: 1280px) 
+    // and (max-device-width: 1366px) 
     and (max-device-width: 1440px) 
+    // and (max-device-width: 2048px) 
+    // and (max-device-width: 2999px) 
+
+    // and (-webkit-min-device-pixel-ratio: 2) 
+    // and (min-resolution: 192dpi)
     { 
         /* #region -------------------- aboutContainer -------------------- */
 
         .aboutContainer {
+            // border: 1px solid #ff00ff;
+
+            // width: 100vw;
+            // left: 0;
+
             width: 90vw;
             left: 5vw;
+
+            // width: 80vw;
+            // left: 10vw;
         }
 
         /* #endregion -------------------- aboutContainer -------------------- */
@@ -179,13 +356,26 @@
 
 @media only screen 
     and (min-device-width: 375px) 
+
+    // and (max-device-width: 767px) 
+    // and (max-device-width: 812px) 
     and (max-device-width: 1280px) 
+
+    // and (-webkit-min-device-pixel-ratio: 3)
     { 
         /* #region -------------------- aboutContainer -------------------- */
 
         .aboutContainer {
-            width: 95vw;
-            left: 2.5vw;
+            // border: 1px solid #ff00ff;
+
+            // width: 100vw;
+            // left: 0;
+
+            width: 90vw;
+            left: 5vw;
+
+            // width: 80vw;
+            // left: 10vw;
         }
 
         /* #endregion -------------------- aboutContainer -------------------- */

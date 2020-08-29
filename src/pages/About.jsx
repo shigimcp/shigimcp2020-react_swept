@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { useLayoutEffect } from 'react';
 
 import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 import '../stylesheets/About.scss';
 
@@ -18,55 +19,170 @@ import myData from '../data/MyData';
 //#endregion ==================== IMPORTS ====================
 
 
+//#region ==================== GSAP: Register Plugins ====================
+
+gsap.registerPlugin(MotionPathPlugin);
+
+//#endregion ==================== GSAP: Register Plugins ====================
+
+
 
 //#region ==================== CONSTANTS ====================
+
+//#region -------------------- DATA --------------------
 
 // const employerData = myData[0];
 // const workData = myData[1];
 const aboutData = myData[2];
 
+//#endregion -------------------- DATA --------------------
+
+
+//#region -------------------- ANIMATION DURATIONs --------------------
+
+// const staggerDuration = 0.125;
+// const staggerDelay = 0.0375;
+
+// const waveDuration = 10;
+
+// const animDuration00 = 0.125;
+// const animDuration00_5 = 0.50;
+// const animDuration01 = 1.00;
+// const animDuration01_25 = 1.25;
+// const animDuration01_5 = 1.50;
+const animDuration02 = 2.00;
+// const animDuration02_5 = 2.50;
+// const animDuration03 = 3.00;
+// const animDuration03_5 = 3.50;
+// const animDuration04 = 4.00;
+// const animDuration04_5 = 4.50;
+// const animDuration05 = 5.00;
+// const animDuration05_5 = 5.50;
+// const animDuration06 = 6.00;
+// const animDuration06_5 = 6.50;
+// const animDuration07 = 7.00;
+// const animDuration07_5 = 7.50;
+// const animDuration08 = 8.00;
+// const animDuration08_5 = 8.50;
+// const animDuration09 = 9.00;
+// const animDuration09_5 = 9.50;
+// const animDuration10 = 10.00;
+
+//#endregion -------------------- ANIMATION DURATIONs --------------------
+
 //#endregion ==================== CONSTANTS ====================
 
 
 
-//#region ==================== MyCurls ====================
+//#region ==================== MyThoughts ====================
 
-function Curl(props) {
+function ThoughtLB(props) {
     return (
-        <svg className='curl' id={props.curlSvgID} xmlns='http://www.w3.org/2000/svg' brain={props.brain} viewBox='0 0 50 100' enableBackground='new 0 0 50 100' onClick={(e) => handleThought(e.target)}>
-            <path className='curlPath' id={props.curlPathID} d='M10.164 93.706c7.735 9.34 24.605 8.114 30.362-2.544 2.813-5.207 3.003-11.594.186-16.84-2.904-5.41-9.065-8.555-15.283-9.188-6.42-.654-13.07 1.684-16.955 6.63-3.9 4.967-4.607 12.137.127 16.854 4.535 4.52 11.862 4.53 17.812 3.054 6.502-1.612 12.996-5.167 17.53-9.865 4.63-4.8 7.284-11.432 4.872-17.805-2.334-6.168-8.464-10.812-15.243-12.04-7.614-1.38-15.903.72-22.15 4.97C5.73 60.8.578 67.626 3.315 74.5c2.442 6.14 9.84 8.83 16.37 8.567 6.803-.276 13.363-3.14 18.18-7.65 4.74-4.442 7.87-10.615 7.76-16.987-.11-6.344-3.21-12.58-8.088-16.92-5.093-4.53-11.966-6.99-18.977-6.173-7.487.872-14.26 5.337-16.427 12.352-2.057 6.655 1.092 13.196 7.015 16.996 5.61 3.6 13.084 4.383 19.476 2.346 12.553-4.002 21.796-17.54 16.672-29.843-4.598-11.04-18.768-18.508-31.07-14.477C7.755 24.835 1.95 29.95.402 36.403c-1.618 6.75 1.804 13.23 7.733 17.036 13.012 8.35 31.07-.39 36.818-12.777 2.867-6.175 3.01-13.057-.23-19.13-2.94-5.506-8.712-10.04-15.203-11.203C15.903 7.89 1.992 21.103 8.207 33.824c2.564 5.248 8.34 8.883 14.24 10.03 6.566 1.274 13.086-.264 18.328-4.177 10.726-8.007 12.62-23.19 2.918-32.612-9.492-9.22-25.55-9.655-34.78.106-4.303 4.55-7.036 10.72-6.447 16.883.608 6.364 4.23 11.872 9.602 15.683 5.374 3.812 11.683 4.92 18.234 4.07 1.675-.22 2.557-2.22 2.17-3.603-.474-1.693-2.168-2.26-3.823-2.045C19.87 39.3 10.05 32.028 9.307 23.75 8.565 15.478 15.746 6.9 24.715 6.412c8.967-.49 18.345 6.243 18.482 15.054.128 8.205-7.13 16.42-16.13 16.4-8.49-.02-17.22-7.44-11.98-15.537 2.38-3.68 6.917-6.18 11.535-5.852 4.436.314 8.528 3.002 10.93 6.45 5.758 8.263 1.267 18.96-7.085 23.972-4.61 2.766-10.65 4.208-15.927 2.308-4.212-1.516-7.828-5.308-7.577-9.743.25-4.418 3.944-8.158 8.02-9.97 4.015-1.786 8.713-1.543 12.785-.068C36 32.41 41.685 40.547 39.008 48.822s-12.49 14.607-21.66 12.234c-4.223-1.092-8.56-4.08-8.876-8.52-.35-4.902 3.66-8.895 8.41-10.203 9.777-2.69 19.336 4.31 21.423 13.225 2.078 8.875-5.134 17.536-13.882 20.112-4.005 1.18-9.16 1.445-12.698-1.087-4.502-3.223-1.064-8.445 2.16-11.16 7.48-6.3 22.26-8.297 27.79 1.364 5.072 8.86-6.388 16.947-13.93 19.792-3.786 1.427-8.92 2.65-12.772.775-4.126-2.008-3.626-6.896-1.337-10.037 5.212-7.15 17.96-5.482 22.176 1.703 4.825 8.224-1.31 18.583-11.122 19.276-4.643.328-9.373-1.22-12.64-4.367-1.235-1.193-2.912.538-1.886 1.776z' fill='#191919' />
+
+        <svg className='thought thoughtLB' id={props.thoughtSvgID} xmlns='http://www.w3.org/2000/svg' brain={props.brain} viewBox='0 0 525 320' enableBackground='0 0 525 320'>
+
+            <g className='thoughtBubble' id={props.thoughtBubbleSvgID} xmlns='http://www.w3.org/2000/svg' brain={props.brain} viewBox='0 0 400 280' enableBackground='0 0 400 280'>
+                <path className='thoughtBubblePath' id={props.thoughtBubblePathID} d='M260.83 277.5c-16.127 0-30.895-9.492-37.623-24.184l-.798-1.744-1.893.32c-2.897.49-5.853.738-8.784.738-28.848 0-52.317-23.49-52.317-52.362 0-2.02.12-4.077.357-6.118l.237-2.038-1.953-.63c-18.278-5.894-30.558-22.774-30.558-42.007 0-19.473 12.476-36.417 31.046-42.165l2.31-.715-.638-2.333c-.875-3.198-1.32-6.494-1.32-9.794 0-20.405 16.587-37.005 36.974-37.005 2.43 0 4.873.242 7.264.718l2.672.534.3-2.708c2.998-26.96 25.726-47.293 52.87-47.293 17.95 0 34.572 8.973 44.46 24.003l.995 1.512 1.747-.473c3.334-.902 6.77-1.36 10.21-1.36.604 0 1.202.02 1.8.047l1.718.077.686-1.58c7.51-17.276 24.518-28.44 43.336-28.44 25.207 0 45.93 19.72 47.178 44.896l.14 2.807 2.77-.465c2.57-.43 5.19-.65 7.79-.65 12.06 0 23.512 4.583 32.242 12.903l1.26 1.2 1.562-.763c5.976-2.92 12.4-4.4 19.097-4.4 24.036 0 43.59 19.572 43.59 43.63 0 8.104-2.236 16.017-6.47 22.88l-.76 1.23.69 1.27c2.564 4.75 3.92 10.13 3.92 15.562 0 9.505-4.128 18.535-11.325 24.77l-2.273 1.97 2.353 1.876c10.68 8.512 16.807 21.22 16.807 34.865 0 24.563-19.966 44.546-44.507 44.546-6.286 0-12.365-1.287-18.067-3.825l-1.93-.858-1.17 1.76c-6.574 9.908-17.58 15.822-29.438 15.822-16.456 0-30.96-11.663-34.485-27.732l-.82-3.742-3.096 2.26c-6.288 4.588-13.73 7.013-21.52 7.013-6.186 0-12.303-1.58-17.69-4.565l-1.69-.936-1.33 1.396c-7.814 8.182-18.333 12.688-29.62 12.688-4.728 0-9.373-.805-13.807-2.393l-2.413-.864-.804 2.434c-5.61 16.995-21.397 28.416-39.286 28.416z' fill='#ffff00' stroke='#ff0000' strokeWidth='5' strokeLinecap='butt' strokeMiterlimit='5' />
+            </g>
+
+            <g className='boingLB' id={props.boingLBSvgID} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 325 245' enableBackground='0 0 325 245'>
+                <path className='boingPath' id={props.boingLBPathID} d='M25 270c9.322-48.97 22.81-93.073 39.48-130.11s36.515-67.01 58.554-87.722S169.304 20 194.74 20s49.665 11.454 71.705 32.167S308.332 102.963 325 140' fill='none' stroke='#00ff00' strokeMiterlimit='10' />
+            </g>
+
+            <g className='curl' id={props.curlSvgID} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100' enableBackground='0 0 50 100' onClick={(e) => handleThought(e.target)}>
+                <path className='curlPath' id={props.curlPathID} d='M10.164 313.706c7.735 9.34 24.605 8.114 30.362-2.544 2.813-5.207 3.003-11.594.186-16.84-2.904-5.41-9.065-8.555-15.283-9.188-6.42-.654-13.07 1.684-16.955 6.63-3.9 4.967-4.607 12.137.127 16.854 4.535 4.52 11.862 4.53 17.812 3.054 6.502-1.612 12.996-5.167 17.53-9.865 4.63-4.8 7.284-11.432 4.872-17.805-2.334-6.168-8.464-10.812-15.243-12.04-7.614-1.38-15.903.72-22.15 4.97C5.73 280.8.578 287.626 3.314 294.5c2.442 6.14 9.84 8.83 16.37 8.567 6.803-.276 13.363-3.14 18.18-7.65 4.74-4.442 7.87-10.615 7.76-16.987-.11-6.344-3.21-12.58-8.088-16.92-5.093-4.53-11.966-6.99-18.977-6.173-7.488.872-14.26 5.337-16.428 12.352-2.057 6.655 1.092 13.196 7.015 16.996 5.61 3.6 13.084 4.383 19.476 2.346 12.553-4.002 21.796-17.54 16.672-29.843-4.598-11.04-18.768-18.508-31.07-14.477C7.754 244.833 1.948 249.95.4 256.4c-1.62 6.75 1.803 13.232 7.732 17.038 13.012 8.352 31.07-.39 36.818-12.776 2.866-6.175 3.01-13.057-.232-19.13-2.938-5.506-8.71-10.04-15.202-11.203-13.615-2.44-27.526 10.773-21.31 23.494 2.564 5.248 8.34 8.883 14.24 10.03 6.566 1.274 13.086-.264 18.328-4.177 10.726-8.007 12.62-23.19 2.918-32.612-9.492-9.22-25.55-9.655-34.78.106-4.303 4.55-7.036 10.72-6.447 16.883.608 6.364 4.23 11.872 9.602 15.682 5.374 3.812 11.683 4.92 18.234 4.07 1.676-.22 2.558-2.22 2.17-3.603-.473-1.693-2.167-2.26-3.822-2.045-8.777 1.142-18.597-6.13-19.34-14.408-.745-8.272 6.436-16.85 15.406-17.338 8.967-.49 18.345 6.243 18.482 15.054.128 8.205-7.13 16.42-16.13 16.4-8.49-.02-17.22-7.44-11.98-15.537 2.38-3.68 6.917-6.18 11.535-5.852 4.437.314 8.53 3.002 10.932 6.45 5.757 8.263 1.266 18.96-7.086 23.972-4.61 2.766-10.65 4.208-15.927 2.308-4.213-1.516-7.83-5.308-7.578-9.743.25-4.418 3.944-8.158 8.02-9.97 4.015-1.786 8.713-1.543 12.785-.068 8.232 2.982 13.917 11.12 11.24 19.395-2.68 8.275-12.49 14.607-21.66 12.234-4.223-1.092-8.56-4.08-8.876-8.52-.35-4.903 3.66-8.896 8.412-10.204 9.776-2.69 19.335 4.31 21.422 13.225 2.078 8.875-5.134 17.536-13.882 20.112-4.005 1.178-9.16 1.444-12.698-1.088-4.502-3.223-1.064-8.445 2.16-11.16 7.48-6.3 22.26-8.297 27.79 1.364 5.072 8.86-6.388 16.947-13.93 19.792-3.786 1.428-8.92 2.65-12.772.776-4.126-2.008-3.626-6.896-1.337-10.037 5.212-7.15 17.96-5.482 22.176 1.703 4.826 8.223-1.31 18.582-11.12 19.275-4.644.328-9.374-1.22-12.64-4.367-1.235-1.19-2.912.54-1.886 1.778z' fill='#0000ff' />
+            </g>
+
         </svg>
     );
 }
 
+function ThoughtRB(props) {
+    return (
 
-function MyCurls() {
+        <svg className='thought thoughtRB' id={props.thoughtSvgID} xmlns='http://www.w3.org/2000/svg' brain={props.brain} viewBox='0 0 525 320' enableBackground='0 0 525 320'>
 
-    const curls = aboutData.map((curl) =>
+            <g className='thoughtBubble' id={props.thoughtBubbleSvgID} xmlns='http://www.w3.org/2000/svg' brain={props.brain} viewBox='0 0 400 280' enableBackground='0 0 400 280'>
+                <path className='thoughtBubblePath' id={props.thoughtBubblePathID} d='M264.17 277.5c-17.89 0-33.677-11.42-39.286-28.42l-.803-2.434-2.413.864c-4.433 1.588-9.08 2.393-13.807 2.393-11.286 0-21.804-4.506-29.618-12.688l-1.333-1.396-1.69.935c-5.388 2.986-11.505 4.565-17.69 4.565-7.79 0-15.23-2.425-21.52-7.014l-3.093-2.258-.82 3.74c-3.527 16.07-18.03 27.733-34.487 27.733-11.858 0-22.862-5.913-29.437-15.82l-1.168-1.76-1.93.858c-5.704 2.538-11.783 3.825-18.07 3.825-24.54 0-44.505-19.982-44.505-44.545 0-13.646 6.126-26.353 16.807-34.865l2.352-1.875-2.274-1.97C12.19 161.13 8.06 152.102 8.06 142.596c0-5.432 1.357-10.812 3.922-15.56l.687-1.272-.76-1.23c-4.232-6.864-6.47-14.776-6.47-22.88 0-24.058 19.555-43.63 43.592-43.63 6.695 0 13.12 1.48 19.096 4.4l1.563.764 1.26-1.2c8.73-8.32 20.182-12.903 32.243-12.903 2.6 0 5.22.22 7.79.65l2.77.464.14-2.808C115.14 22.222 135.862 2.5 161.07 2.5c18.817 0 35.828 11.164 43.336 28.44l.686 1.58 1.72-.078c.595-.027 1.194-.046 1.797-.046 3.44 0 6.874.458 10.21 1.36l1.746.472.995-1.512c9.89-15.03 26.512-24.003 44.462-24.003 27.144 0 49.87 20.332 52.868 47.293l.3 2.708 2.674-.533c2.39-.476 4.834-.717 7.264-.717 20.387 0 36.973 16.6 36.973 37.005 0 3.3-.442 6.596-1.317 9.794l-.64 2.333 2.312.715c18.57 5.747 31.047 22.692 31.047 42.165 0 19.232-12.28 36.114-30.56 42.008l-1.95.63.235 2.037c.237 2.04.357 4.1.357 6.118 0 28.873-23.47 52.362-52.316 52.362-2.93 0-5.886-.248-8.784-.738l-1.892-.32-.8 1.744c-6.728 14.692-21.495 24.184-37.622 24.184z' fill='#ffff00' stroke='#ff0000' strokeWidth='5' strokeLinecap='butt' strokeMiterlimit='5' />
+            </g>
 
-        <Curl
-            key={curl.about_index}
-            keyProxy={curl.brain + '_' + curl.about_index}
-            brain={curl.brain}
-            thought={curl.thought}
-            format={curl.format}
-            format_src={curl.format_src}
-            link={curl.link}
-            aWidth={curl.aWidth}
-            aHeight={curl.aHeight}
-            curlSvgID={'curlSvg' + curl.about_index}
-            curlPathID={'curlPath' + curl.about_index}
+            <g className='boingRB' id={props.boingRBSvgID} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 325 245' enableBackground='0 0 325 245'>
+                <path className='boingPath' id={props.boingRBPathID} d='M200 140c16.668-37.037 36.516-67.12 58.555-87.833S304.825 20 330.26 20c25.435 0 49.666 11.454 71.706 32.167 22.04 20.713 41.887 50.686 58.555 87.722C477.19 176.926 490.68 221.03 500 270' fill='none' stroke='#00ff00' strokeMiterlimit='10' />
+            </g>
+
+            <g className='curl' id={props.curlSvgID} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 100' enableBackground='0 0 50 100' onClick={(e) => handleThought(e.target)}>
+                <path className='curlPath' id={props.curlPathID} d='M514.836 313.706c-7.735 9.34-24.604 8.114-30.362-2.544-2.813-5.207-3.003-11.594-.186-16.84 2.904-5.41 9.065-8.555 15.283-9.188 6.42-.654 13.07 1.684 16.955 6.63 3.9 4.967 4.607 12.137-.127 16.854-4.535 4.52-11.862 4.53-17.812 3.054-6.502-1.612-12.996-5.167-17.53-9.865-4.63-4.8-7.284-11.432-4.872-17.805 2.334-6.168 8.464-10.812 15.243-12.04 7.614-1.38 15.903.72 22.15 4.97 5.692 3.87 10.844 10.695 8.108 17.57-2.442 6.14-9.84 8.83-16.37 8.567-6.803-.276-13.363-3.14-18.18-7.65-4.74-4.442-7.87-10.615-7.76-16.987.11-6.344 3.21-12.58 8.088-16.92 5.093-4.53 11.966-6.99 18.977-6.173 7.488.872 14.26 5.337 16.428 12.352 2.057 6.655-1.092 13.196-7.015 16.996-5.61 3.6-13.084 4.383-19.476 2.346-12.553-4.002-21.796-17.54-16.672-29.843 4.598-11.04 18.768-18.508 31.07-14.477 6.472 2.12 12.278 7.237 13.825 13.688 1.62 6.75-1.803 13.232-7.732 17.038-13.012 8.352-31.07-.39-36.818-12.776-2.866-6.175-3.01-13.057.232-19.13 2.938-5.506 8.71-10.04 15.202-11.203 13.615-2.44 27.526 10.773 21.31 23.494-2.564 5.248-8.34 8.883-14.24 10.03-6.566 1.274-13.086-.264-18.328-4.177-10.726-8.007-12.62-23.19-2.918-32.612 9.492-9.22 25.55-9.655 34.78.106 4.303 4.55 7.036 10.72 6.447 16.883-.608 6.364-4.23 11.872-9.602 15.682-5.374 3.812-11.683 4.92-18.234 4.07-1.676-.22-2.558-2.22-2.17-3.603.473-1.693 2.167-2.26 3.822-2.045 8.777 1.142 18.597-6.13 19.34-14.408.745-8.272-6.436-16.85-15.406-17.338-8.967-.49-18.345 6.243-18.482 15.054-.128 8.205 7.13 16.42 16.13 16.4 8.49-.02 17.22-7.44 11.98-15.537-2.38-3.68-6.917-6.18-11.535-5.852-4.437.314-8.53 3.002-10.932 6.45-5.757 8.263-1.266 18.96 7.086 23.972 4.61 2.766 10.65 4.208 15.927 2.308 4.213-1.516 7.83-5.308 7.578-9.743-.25-4.418-3.944-8.158-8.02-9.97-4.015-1.786-8.713-1.543-12.785-.068-8.232 2.982-13.917 11.12-11.24 19.395 2.68 8.275 12.49 14.607 21.66 12.234 4.223-1.092 8.56-4.08 8.876-8.52.35-4.903-3.66-8.896-8.412-10.204-9.776-2.69-19.335 4.31-21.422 13.225-2.078 8.875 5.134 17.536 13.882 20.112 4.005 1.178 9.16 1.444 12.698-1.088 4.502-3.223 1.064-8.445-2.16-11.16-7.48-6.3-22.26-8.297-27.79 1.364-5.072 8.86 6.388 16.947 13.93 19.792 3.786 1.428 8.92 2.65 12.772.776 4.126-2.008 3.626-6.896 1.337-10.037-5.212-7.15-17.96-5.482-22.176 1.703-4.826 8.223 1.31 18.582 11.12 19.275 4.644.328 9.374-1.22 12.64-4.367 1.235-1.19 2.912.54 1.886 1.778z' fill='#0000ff' />
+            </g>
+
+        </svg>
+    );
+}
+
+function MyThoughts() {
+
+    const leftThoughts = aboutData.filter(isLeft => isLeft.brain === 'left').map((thought) =>
+
+        <ThoughtLB
+            key={thought.about_index}
+            keyProxy={thought.brain + '_' + thought.about_index}
+            brain={thought.brain}
+            thought={thought.thought}
+            format={thought.format}
+            format_src={thought.format_src}
+            link={thought.link}
+            aWidth={thought.aWidth}
+            aHeight={thought.aHeight}
+
+            thoughtSvgID={'thoughtSvg' + thought.about_index}
+            thoughtPathID={'thoughtPath' + thought.about_index}
+
+            thoughtBubbleSvgID={'thoughtBubbleSvg' + thought.about_index}
+            thoughtBubblePathID={'thoughtBubblePath' + thought.about_index}
+
+            boingLBSvgID={'boingLBSvg' + thought.about_index}
+            boingLBPathID={'boingLBPath' + thought.about_index}
+
+            curlSvgID={'curlSvg' + thought.about_index}
+            curlPathID={'curlPath' + thought.about_index}
+        />,
+    );
+
+    const rightThoughts = aboutData.filter(isRight => isRight.brain === 'right').map((thought) =>
+
+        <ThoughtRB
+            key={thought.about_index}
+            keyProxy={thought.brain + '_' + thought.about_index}
+            brain={thought.brain}
+            thought={thought.thought}
+            format={thought.format}
+            format_src={thought.format_src}
+            link={thought.link}
+            aWidth={thought.aWidth}
+            aHeight={thought.aHeight}
+
+            thoughtSvgID={'thoughtSvg' + thought.about_index}
+            thoughtPathID={'thoughtPath' + thought.about_index}
+
+            thoughtBubbleSvgID={'thoughtBubbleSvg' + thought.about_index}
+            thoughtBubblePathID={'thoughtBubblePath' + thought.about_index}
+
+            boingRBSvgID={'boingRBSvg' + thought.about_index}
+            boingRBPathID={'boingRBPath' + thought.about_index}
+
+            curlSvgID={'curlSvg' + thought.about_index}
+            curlPathID={'curlPath' + thought.about_index}
         />,
     );
 
     return (
         <>
-            {curls}
+            {leftThoughts}
+            {rightThoughts}
         </>
     );
 }
 
-//#endregion ==================== MyCurls ====================
+//#endregion ==================== MyThoughts ====================
 
 
 
@@ -188,6 +304,34 @@ function addGuides(refContainer) {
 //#endregion -------------------- FUNCTION: addGuides(refContainer) --------------------
 
 
+//#region -------------------- FUNCTION: buildThought(thisContainer) --------------------
+
+function buildThought(thisContainer) {
+
+    for (let thought = 0; thought < thisContainer.children.length; thought++) {
+
+        let thisThought = thisContainer.children[thought];
+        let thisThoughtBubble = thisContainer.children[thought].children[0];
+        let boing = thisContainer.children[thought].children[1].children[0];
+        let thisCurl = thisContainer.children[thought].children[2].children[0];
+
+
+        if (thisThought.getAttribute('brain') === 'left') {
+
+            gsap.set([thisThoughtBubble], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], start: 1 } });
+            gsap.to([thisCurl], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], autoRotate: 90 }, duration: animDuration02, ease: 'power3.out' });
+
+        } else {
+
+            gsap.set([thisThoughtBubble], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], end: 0 } });
+            gsap.to([thisCurl], { motionPath: { path: boing, align: boing, alignOrigin: [0.5, 0.5], autoRotate: 90, start: 1, end: 0 }, duration: animDuration02, ease: 'power3.out' });
+        }
+    }
+}
+
+//#endregion -------------------- FUNCTION: buildThought(thisContainer) --------------------
+
+
 //#region -------------------- FUNCTION: disperseChildren(parentContainer) --------------------
 //        -------------------- REF: https://stackoverflow.com/questions/20539196/creating-svg-elements-dynamically-with-javascript-inside-html --------------------
 
@@ -211,6 +355,13 @@ function disperseChildren(parentContainer) {
 
         let thisCurl = parentContainer.children[p];
 
+        if (thisCurl.getAttribute('brain') === 'left') {
+            console.log(thisCurl.id + ' is LEFT brain!');
+        } else {
+            console.log(thisCurl.id + ' is RIGHT brain!');
+        }
+
+
         const thisAngle = (randomize2x() * (maxAngleDegrees - minAngleDegrees) + minAngleDegrees) / 180 * Math.PI;
         const thisRadius = (randomize2x() * (outerRadius - innerRadius) + innerRadius);
         const curlX = (Math.cos(thisAngle) * (thisRadius * 0.5)) + outerRadius * 0.5;
@@ -219,13 +370,13 @@ function disperseChildren(parentContainer) {
 
         if (curlX >= (outerSVGDims.width * 0.5)) {
 
-            gsap.set([thisCurl], { x: curlX, y: curlY, rotation: 30 });
-            // gsap.set([thisCurl.children[0]], { fill: 'rgba(255,255,0,0.5)' });
+            gsap.set([thisCurl], { x: curlX, y: curlY });
+            gsap.set([thisCurl.children[0]], { fill: 'rgba(255,255,0,0.5)' });
 
         } else {
 
-            gsap.set([thisCurl], { x: curlX, y: curlY, rotation: -30 });
-            // gsap.set([thisCurl.children[0]], { fill: 'rgba(0,255,255,0.5)' });
+            gsap.set([thisCurl], { x: curlX, y: curlY });
+            gsap.set([thisCurl.children[0]], { fill: 'rgba(0,255,255,0.5)' });
         }
     }
 }
@@ -233,24 +384,23 @@ function disperseChildren(parentContainer) {
 //#endregion -------------------- FUNCTION: disperseChildren(parentContainer) --------------------
 
 
-//#region -------------------- FUNCTION: handleThought() --------------------
+//#region -------------------- FUNCTION: handleThought(thisCurl) --------------------
 
 function handleThought(thisCurl) {
 
     console.log('');
-    console.log('--------------------  handleThought())  --------------------');
+    console.log('--------------------  handleThought(thisCurl))  --------------------');
 
     console.log('thisCurl.id = ' + thisCurl.id);
 }
 
-//#endregion -------------------- FUNCTION: getDimensions(thisContainer) --------------------
+//#endregion -------------------- FUNCTION: handleThought(thisCurl) --------------------
 
 //#endregion ==================== FUNCTIONS ====================
 
 
 
 export const About = () => {
-
 
     //#region ==================== ASSETS _Ref ====================
 
@@ -277,6 +427,8 @@ export const About = () => {
 
         //#endregion -------------------- ADD [AFRO] GUIDE --------------------
 
+
+        buildThought(curlContainer_Ref.current);
         disperseChildren(curlContainer_Ref.current);
 
     }, []);
@@ -355,7 +507,7 @@ export const About = () => {
             <div className='guideContainer' id='guideContainerID' ref={guideContainer_Ref}></div>
 
             <div className='curlContainer' id='curlContainerID' ref={curlContainer_Ref}>
-                <MyCurls />
+                <MyThoughts />
             </div>
 
         </div>

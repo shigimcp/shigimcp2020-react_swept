@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shigimcp2020-react_swept/static/css/main.9385ebf8.chunk.css",
-    "main.js": "/shigimcp2020-react_swept/static/js/main.a3a3405e.chunk.js",
-    "main.js.map": "/shigimcp2020-react_swept/static/js/main.a3a3405e.chunk.js.map",
+    "main.css": "/shigimcp2020-react_swept/static/css/main.d1878739.chunk.css",
+    "main.js": "/shigimcp2020-react_swept/static/js/main.a76cf6a4.chunk.js",
+    "main.js.map": "/shigimcp2020-react_swept/static/js/main.a76cf6a4.chunk.js.map",
     "runtime-main.js": "/shigimcp2020-react_swept/static/js/runtime-main.b5c5c3ca.js",
     "runtime-main.js.map": "/shigimcp2020-react_swept/static/js/runtime-main.b5c5c3ca.js.map",
-    "static/js/2.75d88689.chunk.js": "/shigimcp2020-react_swept/static/js/2.75d88689.chunk.js",
-    "static/js/2.75d88689.chunk.js.map": "/shigimcp2020-react_swept/static/js/2.75d88689.chunk.js.map",
+    "static/js/2.0a500fac.chunk.js": "/shigimcp2020-react_swept/static/js/2.0a500fac.chunk.js",
+    "static/js/2.0a500fac.chunk.js.map": "/shigimcp2020-react_swept/static/js/2.0a500fac.chunk.js.map",
     "index.html": "/shigimcp2020-react_swept/index.html",
-    "precache-manifest.90d0f832512af2a54cce82ca28dad614.js": "/shigimcp2020-react_swept/precache-manifest.90d0f832512af2a54cce82ca28dad614.js",
+    "precache-manifest.3487649803914f5e5301f628231485ff.js": "/shigimcp2020-react_swept/precache-manifest.3487649803914f5e5301f628231485ff.js",
     "service-worker.js": "/shigimcp2020-react_swept/service-worker.js",
-    "static/css/main.9385ebf8.chunk.css.map": "/shigimcp2020-react_swept/static/css/main.9385ebf8.chunk.css.map",
-    "static/js/2.75d88689.chunk.js.LICENSE.txt": "/shigimcp2020-react_swept/static/js/2.75d88689.chunk.js.LICENSE.txt",
+    "static/css/main.d1878739.chunk.css.map": "/shigimcp2020-react_swept/static/css/main.d1878739.chunk.css.map",
+    "static/js/2.0a500fac.chunk.js.LICENSE.txt": "/shigimcp2020-react_swept/static/js/2.0a500fac.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/shigimcp2020-react_swept/static/media/ChaleParNinSix.fc1bf3d8.svg",
     "static/media/BSPS_bottle.png": "/shigimcp2020-react_swept/static/media/BSPS_bottle.dab95377.png",
     "static/media/BSPS_image.jpg": "/shigimcp2020-react_swept/static/media/BSPS_image.6bc465a8.jpg",
@@ -82,8 +82,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b5c5c3ca.js",
-    "static/js/2.75d88689.chunk.js",
-    "static/css/main.9385ebf8.chunk.css",
-    "static/js/main.a3a3405e.chunk.js"
+    "static/js/2.0a500fac.chunk.js",
+    "static/css/main.d1878739.chunk.css",
+    "static/js/main.a76cf6a4.chunk.js"
   ]
 }
